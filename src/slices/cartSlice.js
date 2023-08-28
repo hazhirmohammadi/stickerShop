@@ -24,7 +24,7 @@ const cartSlice = createSlice({
                     cartQty: state.cartItems[existingIndex].cartQty + 1,
                 };
 
-                toast.info("تعداد افزایش یافت", { position: "bottom-right" });
+                toast.info("The number increased", { position: "bottom-right" });
             } else {
                 let tempProductItem = {
                     ...action.payload,
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
                 };
                 state.cartItems.push(tempProductItem);
 
-                toast.success("محصول به سبد خرید اضافه شد", {
+                toast.success("The product has been added ", {
                     position: "bottom-right",
                 });
             }
