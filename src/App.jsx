@@ -1,10 +1,18 @@
+import MainLayout from "./components/layouts/MainLayout.jsx";
+import {Helmet} from "react-helmet";
+
 function App() {
 
    return (
        <>
-          <h1 className="text-3xl font-bold  text-center ">
-             Hello world!
-          </h1>
+        <MainLayout>
+           <Helmet>
+              <title className="flex">Sticker shop </title>
+           </Helmet>
+           <div className="mx-auto max-w-6xl">
+
+           </div>
+        </MainLayout>
        </>
    )
 }
