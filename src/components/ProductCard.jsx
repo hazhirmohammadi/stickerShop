@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-// import CustomNumeralNumericFormat from "./Price";
+import CustomNumeralNumericFormat from "./Price";
 import img from "../../public/img/product-5806313-4863042.png";
 
 const ProductCard = ({product}) => {
@@ -24,16 +24,16 @@ const ProductCard = ({product}) => {
                    {description}
                 </div>
                 <div
-                    className="text-green-500 font-primary font-medium text-base absolute bottom-0 right-0 mb-4 pl-8 pr-4 pb-1 pt-2 bg-palette-lighter
+                    className="text-green-500 font-primary font-medium text-base absolute bottom-0 left-0 mb-4 pl-8 pr-4 pb-1 pt-2 bg-palette-lighter
             rounded-tl-sm triangle "
                 >
-                   {/* <CustomNumeralNumericFormat
-                            value={price}
+                   { <CustomNumeralNumericFormat
+                            value={5}
                             thousandSeparator=","
-                            prefix={`قیمت : ‍‍‍`}
-                            suffix={` تومان `}
-                        /> */}
-                   {price}$
+                            prefix={` Price: `}
+                            suffix={` $ `}
+                        />}
+                   {/*{price}*/}
                 </div>
              </div>
           </div>
