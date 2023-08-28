@@ -15,7 +15,7 @@ const Navbar = () => {
              <div className="flex text-center align-baseline mb-8">
                 <Link to="/cart" className="relative">
                    <i className="text-3xl mb-5 absolute ">
-                      <FaShoppingCart />
+                      <FaShoppingCart className="text-purple-400"/>
                    </i>
                    {/* {cartItems.length === 0 ? null : ( */}
                    <div className="absolute top-0 right-0 text-xs bg-yellow-300 text-gray-900 font-semibold rounded-full py-1 px-2 transform translate-x-10 -translate-y-3">

@@ -1,5 +1,6 @@
 import MainLayout from "./components/layouts/MainLayout.jsx";
 import {Helmet} from "react-helmet";
+import Header from "./components/Header.jsx";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
               <title className="flex">Sticker shop </title>
            </Helmet>
            <div className="mx-auto max-w-6xl">
-
+              <Header/>
            </div>
         </MainLayout>
        </>
