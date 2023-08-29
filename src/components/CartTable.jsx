@@ -3,9 +3,11 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 import {Link} from "react-router-dom";
-import {addToCart, getTotals} from "../slices/cartSlice";
+import {addToCart, decreaseCart, getTotals, removeFromCart} from "../slices/cartSlice";
 import CustomNumeralNumericFormat from "./Price";
 import img from "../../public/img/product-5806313-4863042.png";
+import QtyInput from "./common/QtyInput.jsx";
+
 const CartTable = () => {
    const cart = useSelector((state) => state.cart);
    const dispatch = useDispatch();
@@ -17,7 +19,19 @@ const CartTable = () => {
    const handleAddToCart = (product) => {
       dispatch(addToCart(product));
    };
-
+   const handleDecreaseCart = product => {
+      dispatch(decreaseCart(product));
+   };
+   const handleRemoveFromCart = product => {
+      dispatch(removeFromCart(product));
+   };
+   const handleQty = (e, item) => {
+      if (e.target.value > item.cartQty) {
+         handleAddToCart(item)
+      } else {
+         handleDecreaseCart(item)
+      }
+   };
    return (
        <div className="shadow-xl shadow-blue-600 rounded-3xl container mx-auto mb-20
        min-h-screen bg-gray-900">
@@ -87,18 +101,10 @@ const CartTable = () => {
                                  </Link>
                               </td>
                               <td className="font-primary font-medium px-4 sm:px-6 py-4">
-                                 <input
-                                     type="number"
-                                     inputMode="numeric"
-                                     id="variant-quantity"
-                                     name="variant-quantity"
-                                     min="1"
-                                     step="1"
-                                     // value={item.cartQuantity}
-                                     // onChange={(e) =>
-                                     //     handleQty(e, item)
-                                     // }
-                                     className="text-gray-900 form-input border border-gray-300 w-16 rounded-sm focus:border-palette-light focus:ring-palette-light"
+                                 <QtyInput
+                                     qty={item.cartQty}
+                                     decrementQty={() => handleDecreaseCart(item)}
+                                     incrementQty={() => handleAddToCart(item)}
                                  />
                               </td>
                               <td className="text-green-50 text-base font-light px-4 sm:px-6 py-4 hidden sm:table-cell">
@@ -115,9 +121,9 @@ const CartTable = () => {
                                  <button
                                      aria-label="delete-item"
                                      className="hover:bg-red-700  bg-red-500 text-green-50 p-1 rounded"
-                                     // onClick={() =>
-                                     //     handleRemoveFromCart(item)
-                                     // }
+                                     onClick={() =>
+                                         handleRemoveFromCart(item)
+                                     }
                                  >
                                     Dle
                                  </button>

@@ -16,7 +16,7 @@ const ProductCard = ({product}) => {
                     alt={title}
                 />
              </div>
-             <div className="h-48 relative">
+             <div className="h-48 relative ">
                 <div className="font-primary text-purple-400 text-lg pt-4 px-4 font-semibold ">
                    {title}
                 </div>
@@ -24,8 +24,8 @@ const ProductCard = ({product}) => {
                    {description}
                 </div>
                 <div
-                    className="text-green-500 font-primary font-medium text-base absolute bottom-0 left-0 mb-4 pl-8 pr-4 pb-1 pt-2 bg-palette-lighter
-            rounded-tl-sm triangle "
+                    className=" text-green-500 font-primary font-medium text-base absolute bottom-0 left-0 mb-4 pl-8 pr-4 pb-1 pt-2 bg-palette-lighter
+              rounded-tl-sm triangle "
                 >
                    { <CustomNumeralNumericFormat
                             value={5}
