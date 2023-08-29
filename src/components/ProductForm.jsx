@@ -16,7 +16,7 @@ const ProductForm = ({ product }) => {
 
    const handleAddToCart = (item) => {
       dispatch(addToCart(item));
-      // navigate("/cart");
+      navigate("/cart");
    };
 
    const updateQty = () => {
@@ -46,7 +46,7 @@ const ProductForm = ({ product }) => {
               className={atcBtnStyle}
               aria-label="cart-button"
               onClick={() =>
-                  handleAddToCart({ ...product, cartQuantity: qty })
+                  handleAddToCart({ ...product, cartQty: qty })
               }
           >
              Add to cart
