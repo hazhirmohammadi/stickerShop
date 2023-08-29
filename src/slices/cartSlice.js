@@ -24,7 +24,7 @@ const cartSlice = createSlice({
                     cartQty: state.cartItems[existingIndex].cartQty + 1,
                 };
 
-                toast.info("The number increased", { position: "bottom-right" });
+                toast.success("The number increased", { position: "bottom-right" });
             } else {
                 let tempProductItem = {
                     ...action.payload,

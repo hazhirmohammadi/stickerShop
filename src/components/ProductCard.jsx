@@ -3,7 +3,7 @@ import CustomNumeralNumericFormat from "./Price";
 import img from "../../public/img/product-5806313-4863042.png";
 
 const ProductCard = ({product}) => {
-   const {id, title, description, sticker, price} = product;
+   const {id, title, description,  price} = product;
 
    return (
        <Link to={`/products/${id}`}>

@@ -7,7 +7,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between mx-auto max-w-6xl px-6 pb-2 pt-4 md:pt-6">
              <Link to="/" className="cursor-pointer">
                 <h1 className="flex no-underline">
-                        <span className=" text-xl  font-bold tracking-tight  text-amber-400 bg-blue-500 rounded p-1">
+                        <span className=" text-lg   font-bold tracking-tight  text-amber-400 bg-blue-500 rounded p-1">
                            Sticker shop
                         </span>
                 </h1>
