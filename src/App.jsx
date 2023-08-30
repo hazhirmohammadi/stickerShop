@@ -1,30 +1,32 @@
-import MainLayout from "./components/layouts/MainLayout.jsx";
-import {Helmet} from "react-helmet";
-import Header from "./components/Header.jsx";
-import ProductListing from "./components/ProductListing.jsx";
-// import {useSelector} from "react-redux";
-import PaginateItems from "./components/common/PaginateItems.jsx";
+import { Helmet } from "react-helmet";
 
-function App() {
-// const {item:products,status}=useSelector(state => state.products);
+import MainLayout from "./components/layouts/MainLayout";
+import Header from "./components/Header";
+import { useSelector } from "react-redux";
+import PaginateItems from "./components/common/PaginateItems";
+
+const App = () => {
+   const { items: products, status } = useSelector((state) => state.products);
+
    return (
-       <>
-          <MainLayout>
-             <Helmet>
-                <title className="flex">Sticker shop </title>
-             </Helmet>
-             <div className="mx-auto max-w-6xl">
-                <Header/>
-                <ProductListing/>
-                {/*<PaginateItems*/}
-                {/*    productsPerPage={6}*/}
-                {/*    products={products}*/}
-                {/*    status={status}*/}
-                {/*/>*/}
-             </div>
-          </MainLayout>
-       </>
-   )
-}
+       <MainLayout>
+          <Helmet>
+             <title>Sticker shop</title>
+          </Helmet>
 
-export default App
+          <div className="mx-auto max-w-6xl">
+             <Header />
+             <PaginateItems
+                 productsPerPage={6}
+                 products={products}
+                 status={status}
+             />
+          </div>
+       </MainLayout>
+   );
+};
+
+export default App;
+
+
+//

@@ -17,12 +17,19 @@ const ProductListing = () => {
                     ))}
                 </>
             ) : status === "pending" ? (
-                <p>Loading...</p>
+                <p>loading</p>
             ) : (
-                <p>has Problem</p>
+                <p>There is a problem...</p>
             )}
         </div>
     );
 };
 
 export default ProductListing;
+
+
+
+
+
+
+//

@@ -24,7 +24,7 @@ const cartSlice = createSlice({
                     cartQty: state.cartItems[existingIndex].cartQty + 1,
                 };
 
-                toast.success("The number increased", { position: "bottom-right" });
+                toast.info("The number increased", { position: "bottom-right" });
             } else {
                 let tempProductItem = {
                     ...action.payload,
@@ -32,14 +32,14 @@ const cartSlice = createSlice({
                 };
                 state.cartItems.push(tempProductItem);
 
-                toast.success("The product has been added ", {
+                toast.success("The product has been added to the cart", {
                     position: "bottom-right",
                 });
             }
 
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         },
-        getTotals(state, action) {
+        getTotals(state) {
             let { total, qty } = state.cartItems.reduce(
                 (cartTotal, cartItem) => {
                     const { price, cartQty } = cartItem;
@@ -77,7 +77,7 @@ const cartSlice = createSlice({
 
                 state.cartItems = nextCartItems;
 
-                toast.error("Delete Product in your Cart", {
+                toast.error("The product was removed from the shopping cart", {
                     position: "bottom-left",
                 });
             }
@@ -93,7 +93,7 @@ const cartSlice = createSlice({
 
                     state.cartItems = nextCartItems;
 
-                    toast.error("Delete Product in your Cart", {
+                    toast.error("The product was removed from the shopping cart", {
                         position: "bottom-left",
                     });
                 }
